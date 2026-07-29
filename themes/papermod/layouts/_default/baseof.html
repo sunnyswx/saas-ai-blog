@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    {{ block "head" . }}{{ end }}
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="/" class="nav-logo">{{ .Site.Title }}</a>
+                <div class="nav-menu">
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}" class="nav-item">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+            <p><small>Some links on this site are affiliate links. We may earn a commission at no extra cost to you.</small></p>
+        </div>
+    </footer>
+</body>
+</html>

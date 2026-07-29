@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="hero">
+    <div class="hero-content">
+        <h1>{{ .Site.Params.homeInfoParams.Title }}</h1>
+        <p>{{ .Site.Params.homeInfoParams.Content }}</p>
+    </div>
+</div>
+<div class="container">
+    <h2>Latest Reviews</h2>
+    <div class="post-list">
+        {{ range first 10 (where .Site.RegularPages "Section" "blog") }}
+        <article class="post-card">
+            {{ if .Params.cover.image }}
+            <div class="post-cover">
+                <img src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}" loading="lazy">
+            </div>
+            {{ end }}
+            <div class="post-content">
+                <div class="post-meta">
+                    <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+                    {{ with .Params.categories }}
+                    <span class="category">{{ index . 0 }}</span>
+                    {{ end }}
+                </div>
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Params.description }}</p>
+                <div class="post-tags">
+                    {{ range .Params.tags }}
+                    <span class="tag">{{ . }}</span>
+                    {{ end }}
+                </div>
+                <a href="{{ .RelPermalink }}" class="read-more">Read More →</a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

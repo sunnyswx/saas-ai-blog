@@ -1,0 +1,15 @@
+<!-- Google Search Console Verification -->
+<meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}" />
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+<link rel="stylesheet" href="/css/custom.css">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ .Site.Params.googleAnalytics }}');
+</script>

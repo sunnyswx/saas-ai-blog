@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <div class="post-list">
+        {{ range .Pages }}
+        <article class="post-card">
+            {{ if .Params.cover.image }}
+            <div class="post-cover">
+                <img src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}" loading="lazy">
+            </div>
+            {{ end }}
+            <div class="post-content">
+                <div class="post-meta">
+                    <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+                    {{ with .Params.categories }}
+                    <span class="category">{{ index . 0 }}</span>
+                    {{ end }}
+                </div>
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Params.description }}</p>
+                <a href="{{ .RelPermalink }}" class="read-more">Read More →</a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

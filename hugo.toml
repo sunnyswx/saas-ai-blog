@@ -1,0 +1,94 @@
+baseURL = "https://saas-ai-blog.netlify.app"
+title = "AI Tools Hub"
+theme = "papermod"
+publishDir = "public"
+paginate = 10
+enableRobotsTXT = true
+enableEmoji = true
+languageCode = "en-us"
+defaultContentLanguage = "en"
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 5
+[params]
+  # Google Analytics 4
+  googleAnalytics = "G-G86RS4B5Q5"
+  # Google Search Console
+  googleSiteVerification = "iFyODcw6jhfJE9sNPq4t4tZLjnvprLHvua1gRUYLtmM"
+
+  env = "production"
+  title = "AI Tools Hub - Best AI & SaaS Tool Reviews"
+  description = "Expert reviews, comparisons, and tutorials of the best AI tools and SaaS products."
+  keywords = ["AI tools", "SaaS", "software reviews", "AI reviews", "productivity tools"]
+  author = "AI Tools Hub Team"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  comments = false
+  [params.homeInfoParams]
+    Title = "Welcome to AI Tools Hub 🚀"
+    Content = "Discover the best AI tools and SaaS products. Read expert reviews, compare features, and find the perfect tools to grow your business."
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com"
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com"
+  [params.cover]
+    hiddenInList = false
+    hiddenInSingle = false
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "monokai"
+
+# Google Analytics 4 配置
+[services]
+  [services.googleAnalytics]
+    ID = "G-G86RS4B5Q5"
+
+# Sitemap 配置
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
