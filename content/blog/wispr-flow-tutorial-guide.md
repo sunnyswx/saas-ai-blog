@@ -11,7 +11,7 @@ ShowToc: true
 draft: false
 ---
 ## Introduction
-Wispr Flow is an AI voice dictation tool that lets you type by speaking — and it's significantly faster than typing. This guide will walk you through everything from installation to advanced techniques.
+Wispr Flow is an AI voice dictation tool that lets you type by speaking — and it's significantly faster than typing. This guide will walk you through everything from installation to advanced techniques. If you're curious about real-world results, check out my [Wispr Flow Review: One Month of Voice Dictation](/blog/wispr-flow-review-real-experience/).
 ## Step 1: Download and Install
 ### System Requirements
 - macOS 12+ or Windows 10+
@@ -63,7 +63,7 @@ Combine Flow with your daily tools for maximum productivity:
 - **Obsidian**: Keep a voice journal
 ## Step 5: Frequently Asked Questions
 ### Q: How accurate is Flow?
-A: In a quiet environment, expect 95%+ accuracy. Background noise will reduce this — use a noise-canceling mic for best results.
+A: In a quiet environment, expect 95%+ accuracy. Background noise will reduce this — use a noise-canceling mic for best results. For a detailed accuracy comparison with other tools, see [Wispr Flow vs Traditional Voice Dictation](/blog/wispr-flow-vs-traditional-voice-input/).
 ### Q: Can I write code with Flow?
 A: Comments and documentation, yes. Actual code, not recommended. Syntax is too complex for voice input.
 ### Q: Does Flow work offline?
@@ -78,6 +78,10 @@ Here's how I use Flow every day:
 2. **Late morning**: Write blog articles (like this one)
 3. **Afternoon**: Reply to emails and Slack messages
 4. **Evening**: Journal in Obsidian
-Result: I type about 70% less and get more done.
+Result: I type about 70% less and get more done. Want to see how this compares to traditional methods? Read my [real experience after one month of using Flow](/blog/wispr-flow-review-real-experience/).
 **Want to try it? 👉 [Start your free Wispr Flow trial here](https://ref.wisprflow.ai/sunny-nv3z)**
+---
+### 📖 Related Articles
+- [Wispr Flow Review: I Used Voice Dictation for a Month](/blog/wispr-flow-review-real-experience/) — Honest pros, cons, and real-world results
+- [Wispr Flow vs Traditional Voice Dictation](/blog/wispr-flow-vs-traditional-voice-input/) — How Flow compares to built-in dictation, Dragon, and Otter
 *This guide is based on personal experience. Some links are affiliate links.*

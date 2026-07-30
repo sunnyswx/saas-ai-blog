@@ -12,7 +12,7 @@ draft: false
 ---
 ## Bottom Line Up Front
 If you type a lot every day — emails, notes, documents, messages — Wispr Flow is worth trying. It's not one of those AI toys you play with once and forget. It's something that can actually change how you work.
-I've been using it for a full month, and I'm writing this very article with Flow. Honestly? I can't go back.
+I've been using it for a full month, and I'm writing this very article with Flow. Honestly? I can't go back. For a step-by-step setup guide, check out the [Wispr Flow Tutorial: From Installation to Power User](/blog/wispr-flow-tutorial-guide/).
 ## What Is Wispr Flow?
 Simply put, it's an AI voice dictation tool. But unlike the built-in voice input on your phone, Flow does a few things differently:
 **First, it works in any app.** Chrome, Notion, VS Code, Slack, Gmail — if your cursor is blinking, hit the shortcut key and start talking. No switching windows, no copy-pasting.
@@ -24,9 +24,9 @@ When you're writing, your brain moves faster than your fingers. By the time you 
 Also, **my wrists were starting to hurt**. If you've been typing for years, you know the pain. Flow helped a lot with that.
 ## Real-World Experience
 ### Setup
-Download the installer, double-tap Ctrl to wake it up. The first-time setup walks you through mic selection and sensitivity — about 5 minutes total.
+Download the installer, double-tap Ctrl to wake it up. The first-time setup walks you through mic selection and sensitivity — about 5 minutes total. For a complete walkthrough, see the [Wispr Flow installation guide](/blog/wispr-flow-tutorial-guide/).
 ### Accuracy
-This is what everyone asks about. I tested mixed Chinese and English, technical terms, casual speech — Flow hit about 95% accuracy or higher. Occasional typos, but way better than Apple's built-in dictation.
+This is what everyone asks about. I tested mixed Chinese and English, technical terms, casual speech — Flow hit about 95% accuracy or higher. Occasional typos, but way better than Apple's built-in dictation. In fact, if you want a detailed comparison, read [Wispr Flow vs Traditional Voice Dictation](/blog/wispr-flow-vs-traditional-voice-input/).
 The thing that surprised me most: it automatically filters out filler words. Say "um I think this tool is um pretty good" and it outputs "I think this tool is pretty good."
 ### Speed
 The official claim of 90% faster might be a stretch, but **2-3x faster is realistic**. A 1500-word article used to take me about an hour from idea to finish. With Flow? About 30 minutes, and the quality is just as good.
@@ -48,4 +48,8 @@ The official claim of 90% faster might be a stretch, but **2-3x faster is realis
 ## Final Thoughts
 Flow isn't one of those "looks cool but useless" AI products. It's a genuine time-saver. If you spend hours typing every day, give it a shot.
 **Want to try it? 👉 [Start your 14-day free trial of Wispr Flow](https://ref.wisprflow.ai/sunny-nv3z)**
+---
+### 📖 Related Articles
+- [Wispr Flow Tutorial: From Installation to Power User](/blog/wispr-flow-tutorial-guide/) — Complete setup guide and advanced tips
+- [Wispr Flow vs Traditional Voice Dictation](/blog/wispr-flow-vs-traditional-voice-input/) — How Flow compares to built-in dictation, Dragon, and Otter
 *This article is based on real personal experience. Some links are affiliate links.*

@@ -3,54 +3,63 @@ import os
 SITE_DIR = r"C:\Users\wxsu\aipywork\CZsHXUB5Usoy1cWcGyWVA\saas-ai-blog"
 GITHUB_URL = "https://github.com/sunnyswx/saas-ai-blog.git"
 os.chdir(SITE_DIR)
-print("🚀 重新推送...\n")
-# 1. 先看看当前分支
+print("🚀 开始推送修改到 GitHub...\n")
+# 1. 查看当前分支
 branch = subprocess.run(["git", "branch", "--show-current"], capture_output=True, text=True)
-print(f"📌 当前分支: {branch.stdout.strip() or '无'}")
+current_branch = branch.stdout.strip()
+print(f"📌 当前分支: {current_branch or '无'}")
 # 2. 查看所有分支
 branches = subprocess.run(["git", "branch", "-a"], capture_output=True, text=True)
 print(f"📋 所有分支:\n{branches.stdout}")
 # 3. 检查是否有任何提交
-log = subprocess.run(["git", "log", "--oneline"], capture_output=True, text=True)
-if log.stdout.strip():
-    print(f"✅ 已有提交:\n{log.stdout}")
-else:
-    print("⚠️ 没有提交记录，需要先创建第一个提交")
-    # 创建第一个提交
-    # 先确保有文件
-    result = subprocess.run(["git", "add", "--all"], capture_output=True, text=True)
-    print(f"📦 git add: {result.stdout}")
-    # 提交
-    result = subprocess.run(["git", "commit", "-m", "Initial commit: AI Tools Hub blog"], capture_output=True, text=True)
-    print(f"💾 git commit: {result.stdout}")
-    if result.returncode != 0:
-        print(f"❌ 提交失败: {result.stderr}")
-        # 尝试设置默认分支
-        subprocess.run(["git", "config", "init.defaultBranch", "main"], capture_output=True)
-        print("✅ 已设置默认分支为 main")
-        # 再次提交
-        result = subprocess.run(["git", "commit", "-m", "Initial commit: AI Tools Hub blog"], capture_output=True, text=True)
-        print(f"💾 git commit (重试): {result.stdout}")
-# 4. 推送到 GitHub
-print("\n📤 推送到 GitHub...")
-result = subprocess.run(["git", "push", "-u", "origin", "main"], capture_output=True, text=True)
-print(f"📡 推送结果: {result.stdout}")
+log = subprocess.run(["git", "log", "--oneline", "-5"], capture_output=True, text=True)
+print(f"📜 最近提交:\n{log.stdout or '无提交'}")
+# 4. 查看修改状态
+status = subprocess.run(["git", "status", "--short"], capture_output=True, text=True)
+print(f"📝 修改状态:\n{status.stdout or '无修改'}")
+# 5. 查看具体修改了哪些文件
+diff_files = subprocess.run(["git", "diff", "--name-only"], capture_output=True, text=True)
+print(f"📄 修改的文件:\n{diff_files.stdout or '无'}")
+# 6. 添加所有修改
+print("\n📝 步骤 1: git add .")
+subprocess.run(["git", "add", "."], capture_output=True)
+print("   ✅ 已暂存所有修改")
+# 7. 提交
+print("\n📝 步骤 2: git commit")
+commit_msg = "feat: add internal links between blog posts + related articles section"
+result = subprocess.run(["git", "commit", "-m", commit_msg], capture_output=True, text=True)
+print(f"   {result.stdout}")
 if result.stderr:
-    print(f"   stderr: {result.stderr}")
+    print(f"   {result.stderr}")
+# 8. 推送
+print("\n📝 步骤 3: git push")
+# 尝试推送当前分支
+if current_branch:
+    result = subprocess.run(["git", "push", "-u", "origin", current_branch], capture_output=True, text=True)
+else:
+    # 如果没有分支，尝试master
+    result = subprocess.run(["git", "push", "-u", "origin", "master"], capture_output=True, text=True)
+print(f"   {result.stdout}")
+if result.stderr:
+    print(f"   {result.stderr}")
 if result.returncode == 0:
     print("\n✅✅✅ 推送成功！")
-    print(f"   GitHub 仓库: {GITHUB_URL}")
+    print(f"   GitHub 仓库: https://github.com/sunnyswx/saas-ai-blog")
 else:
-    print(f"\n❌ 推送失败")
-    # 尝试 master 分支
-    print("尝试 master 分支...")
-    result = subprocess.run(["git", "push", "-u", "origin", "master"], capture_output=True, text=True)
+    print(f"\n❌ 推送失败，returncode: {result.returncode}")
+    # 尝试其他分支
+    print("\n🔄 尝试推送到 main 分支...")
+    result = subprocess.run(["git", "push", "-u", "origin", "main"], capture_output=True, text=True)
+    print(f"   {result.stdout}")
+    if result.stderr:
+        print(f"   {result.stderr}")
     if result.returncode == 0:
-        print("✅ 推送成功 (master 分支)!")
+        print("\n✅✅✅ 推送成功！")
     else:
-        print(f"❌ 还是失败: {result.stderr}")
-        print("\n💡 可能原因：")
-        print("   1. 需要输入 GitHub 账号密码")
-        print("   2. 或者需要设置 Personal Access Token")
-        print("   3. 请确认仓库已创建: https://github.com/sunnyswx/saas-ai-blog")
-utils.set_state(success=True)
+        print("\n🔄 尝试推送到 master 分支...")
+        result = subprocess.run(["git", "push", "-u", "origin", "master"], capture_output=True, text=True)
+        print(f"   {result.stdout}")
+        if result.stderr:
+            print(f"   {result.stderr}")
+        if result.returncode == 0:
+            print("\n✅✅✅ 推送成功！")
