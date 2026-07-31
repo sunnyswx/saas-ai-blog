@@ -16,7 +16,7 @@ But what exactly is Framer? Why is everyone talking about it? And can someone wi
 ## The Story Behind Framer
 Framer was founded in 2015 by Koen Bok and Jorn van Dijk, both former product designers at Facebook. It started as an interactive prototyping tool, competing with Sketch and Figma for the same audience. The turning point came in 2022, when Framer pivoted to become a full-fledged website publishing platform — letting users not just design pages, but host and publish them as real websites.
 That bet paid off big time.
-When Framer launched its AI-powered website generation feature in 2024, user growth went through the roof. By 2026, Framer has firmly established itself alongside Webflow, Wix, and Squarespace as a major player in the no-code website space. Industry data shows no-code platform users grew over 65% year-over-year, and Framer captured a huge chunk of that growth thanks to its stunning visual output and gentle learning curve. If you're torn between platforms, check out my **[Framer vs Webflow vs WordPress deep dive]({{< relref "/blog/framer-vs-webflow-wordpress" >}})** for a detailed comparison.
+When Framer launched its AI-powered website generation feature in 2024, user growth went through the roof. By 2026, Framer has firmly established itself alongside Webflow, Wix, and Squarespace as a major player in the no-code website space. Industry data shows no-code platform users grew over 65% year-over-year, and Framer captured a huge chunk of that growth thanks to its stunning visual output and gentle learning curve. If you're torn between platforms, check out my **[Framer vs Webflow vs WordPress deep dive](/blog/2026-07-31-framer-vs-webflow-wordpress/)** for a detailed comparison.
 ## What Can Framer Do? The Core Features
 If I had to sum up Framer in one sentence: **It lets you build websites like you're making a slide deck, but the result looks like a custom-coded site that cost five figures.**
 Here are the features that make it special:
@@ -27,7 +27,7 @@ This is Framer's killer feature. Type something like *"build me a modern SaaS la
 ### 3. High-Quality Template Marketplace
 Framer's template quality is among the best in the industry. From personal portfolios and startup landing pages to e-commerce sites and event pages, there's a template for almost every use case. And these aren't those cheap-looking templates you can spot from a mile away — the typography, spacing, and micro-interactions are all meticulously crafted.
 ### 4. Built-in CMS
-A lot of people think Framer is only for static pages, but it actually comes with a capable CMS. You can manage blog posts, product listings, case studies, and more — with content separated from design, so updating content doesn't require touching the layout. For a deep dive into Framer's CMS, check out my **[Framer advanced tips guide]({{< relref "/blog/framer-advanced-tips" >}})**.
+A lot of people think Framer is only for static pages, but it actually comes with a capable CMS. You can manage blog posts, product listings, case studies, and more — with content separated from design, so updating content doesn't require touching the layout. For a deep dive into Framer's CMS, check out my **[Framer advanced tips guide](/blog/2026-07-31-framer-advanced-tips/)**.
 ### 5. One-Click Publishing & Custom Domains
 When your design is ready, hit publish and Framer hosts it for you with a free framer.media subdomain. You can also connect your own custom domain with SSL — no servers, no DevOps, no headaches.
 ## Who Is Framer For?
@@ -37,7 +37,7 @@ In my experience, Framer is perfect for three types of people:
 **Marketers and growth folks.** Need to spin up a landing page for a campaign? Tired of waiting for engineering to prioritize your request? Just open Framer and build it yourself in an hour.
 ## Framer vs Webflow vs Wix: The Short Version
 The most common comparison people make is Framer vs Webflow. Here's the honest take: **Webflow is more powerful but harder to learn. Framer is easier and looks just as good.**
-Webflow's CMS and customization capabilities are objectively stronger for complex projects, but the learning curve is steep. Framer's learning curve is about 1/3 of Webflow's, yet its visual output — especially animations and interactions — is on par or better. I went into much more detail in my **[Framer vs Webflow vs WordPress comparison]({{< relref "/blog/framer-vs-webflow-wordpress" >}})**.
+Webflow's CMS and customization capabilities are objectively stronger for complex projects, but the learning curve is steep. Framer's learning curve is about 1/3 of Webflow's, yet its visual output — especially animations and interactions — is on par or better. I went into much more detail in my **[Framer vs Webflow vs WordPress comparison](/blog/2026-07-31-framer-vs-webflow-wordpress/)**.
 Compared to Wix and Squarespace, Framer gives you way more design freedom. Your site will feel custom-built, not template-driven. But if you need e-commerce or membership features, Wix might be a better fit.
 ## How to Get Started with Framer
 Framer has a free plan that lets you publish a site with Framer branding. To remove the branding and connect a custom domain, paid plans start at around $15/month (check the official site for current pricing).
@@ -50,5 +50,5 @@ The website building industry is going through a massive transformation in 2026,
 If you've been putting off building or redesigning your website, stop waiting. Spend an afternoon with Framer. You might be surprised at how easy it is to make something beautiful.
 ---
 ### 📖 Related Articles
-- [Framer vs Webflow vs WordPress: Which One Should You Choose in 2026?]({{< relref "/blog/framer-vs-webflow-wordpress" >}}) — A six-dimension comparison
-- [Framer Advanced Tips: 5 Techniques to Double Your Website Quality]({{< relref "/blog/framer-advanced-tips" >}}) — From template customization to SEO
+- [Framer vs Webflow vs WordPress: Which One Should You Choose in 2026?](/blog/2026-07-31-framer-vs-webflow-wordpress/) — A six-dimension comparison
+- [Framer Advanced Tips: 5 Techniques to Double Your Website Quality](/blog/2026-07-31-framer-advanced-tips/) — From template customization to SEO

@@ -12,7 +12,7 @@ draft: false
 ---
 # Framer Advanced Tips: 5 Techniques to Build a Better Website in 2026
 I've built several websites with Framer — some turned out great, others taught me hard lessons. This article is a collection of techniques I've validated through real projects. No theory, just practical advice that actually works.
-If you're new to Framer, I recommend starting with the **[Framer beginner's guide]({{< relref "/blog/framer-guide" >}})** first, then coming back here for the advanced stuff.
+If you're new to Framer, I recommend starting with the **[Framer beginner's guide](/blog/2026-07-31-framer-guide/)** first, then coming back here for the advanced stuff.
 ## Tip 1: Don't Start from Scratch, But Don't Just Use a Template As-Is
 Framer's templates are high quality, but the most common mistake I see is people picking a template, swapping the logo and text, and calling it done. The result? It looks like a template. No brand identity.
 Here's my approach: **Use the template as a starting point, not the finish line.**
@@ -22,7 +22,7 @@ Pick a template that matches your brand vibe, then do three things:
 **Third, inject brand elements.** Add custom SVG graphics, brand icons, or pattern elements to headers, footers, dividers, and cards. Even small touches make the difference between "template site" and "custom site."
 > **The goal:** Nobody should be able to tell you used a template. If someone asks "what did you build this with?" — you haven't customized enough.
 ## Tip 2: Use Animations Deliberately, Not Excessively
-Animations are Framer's biggest differentiator — and the easiest thing to overdo. As I mentioned in the **[Framer vs Webflow vs WordPress comparison]({{< relref "/blog/framer-vs-webflow-wordpress" >}})** , Framer's animation engine is one of its core strengths.
+Animations are Framer's biggest differentiator — and the easiest thing to overdo. As I mentioned in the **[Framer vs Webflow vs WordPress comparison](/blog/2026-07-31-framer-vs-webflow-wordpress/)** , Framer's animation engine is one of its core strengths.
 Scroll effects, hover states, entrance animations — they're all easy to set up. But I've seen too many sites where *everything* animates, making the page feel slow and chaotic.
 My rule: **Every animation should serve a purpose.**
 Here's what works:
@@ -58,7 +58,7 @@ Framer generates a sitemap automatically. Submit it to Google Search Console so 
 ### 5. Optimize Images
 Framer does some optimization automatically, but compress images before uploading. Use WebP format for smaller file sizes. Always fill in Alt text — it helps with both SEO and accessibility.
 ## Tip 5: Use the CMS from Day One
-A lot of people treat Framer as a static page tool, but its CMS is genuinely useful. As I covered in the **[Framer beginner's guide]({{< relref "/blog/framer-guide" >}})** , the CMS is what transforms Framer from a prototyping tool into a real website platform.
+A lot of people treat Framer as a static page tool, but its CMS is genuinely useful. As I covered in the **[Framer beginner's guide](/blog/2026-07-31-framer-guide/)** , the CMS is what transforms Framer from a prototyping tool into a real website platform.
 If your site has blog posts, case studies, team member profiles, or any content with a repeating structure, use the CMS. Here's why:
 - **Content and design are separated** — update content without touching the layout. Your marketing team can handle this.
 - **Batch editing** — change the style of all cards or lists at once, instead of one by one.
@@ -81,5 +81,5 @@ If you haven't tried Framer yet, now's the time. Use my referral link to get sta
 The tools change, but good design principles don't. Hope your next website is your best one yet.
 ---
 ### 📖 Related Articles
-- [What Is Framer? The No-Code Website Builder You Need to Try in 2026]({{< relref "/blog/framer-guide" >}}) — A complete beginner's guide
-- [Framer vs Webflow vs WordPress: Which One Should You Choose in 2026?]({{< relref "/blog/framer-vs-webflow-wordpress" >}}) — A six-dimension comparison
+- [What Is Framer? The No-Code Website Builder You Need to Try in 2026](/blog/2026-07-31-framer-guide/) — A complete beginner's guide
+- [Framer vs Webflow vs WordPress: Which One Should You Choose in 2026?](/blog/2026-07-31-framer-vs-webflow-wordpress/) — A six-dimension comparison
