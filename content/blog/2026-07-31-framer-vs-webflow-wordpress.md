@@ -5,7 +5,7 @@ description: "Framer vs Webflow vs WordPress: an honest six-dimension comparison
 tags: ["Framer", "Webflow", "WordPress", "website builder comparison", "no-code", "business website"]
 categories: ["AI Tools"]
 cover:
-  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
   alt: "Framer vs Webflow vs WordPress comparison"
 ShowToc: true
 draft: false
