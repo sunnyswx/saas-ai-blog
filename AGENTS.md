@@ -7,11 +7,17 @@
 
 ## 2. 技术栈与环境
 - **数据源**：Product Hunt GraphQL API
+  - 端点：`https://api.producthunt.com/v2/api/graphql`
+  - 认证：`Authorization: Bearer [TOKEN]`
+  - 排序参数：`order: VOTES` (投票数) / `order: NEWEST` (最新)
+  - 分页：`first: 20`, `after: "MTA="` (base64 游标)
+  - 限制：无日期筛选、无搜索、无主题筛选，需在客户端过滤
 - **输出格式**：Markdown (Hugo/GitHub Pages 规范)
 - **目标仓库**：https://github.com/sunnyswx/saas-ai-blog
 - **部署平台**：Netlify
 - **通知渠道**：微信 (通过 Gateway)
 - **佣金数据获取**：手动查询产品官网或联盟平台
+- **API 测试报告**：见 `API_TEST_REPORT.md`
 
 ## 3. 核心评估逻辑：五维打分矩阵
 在筛选产品时，**必须**输出以下表格，总分 < 18 分直接淘汰：
@@ -42,7 +48,7 @@
    - 联盟合作信息
 3. **分支规范**：每日任务必须保存到 `content/blog/`，禁止直接在 master 分支修改。
 4. **佣金查询**：无法通过 API 获取佣金信息时，手动查询产品官网或联盟平台。
-5. **图片搜索**：使用 Unsplash API 搜索相关产品图片，确保不重复。
+5. **图片搜索**：使用 Lorem Picsum 或 Unsplash Source 搜索相关产品图片，确保不重复。
 
 ## 5. 文章生成规范
 
@@ -94,10 +100,16 @@ draft: false
 - 手动触发（由用户发送指令）
 
 ### Step 2: 抓取与评估
-- 抓取 Product Hunt 最新 SaaS 类产品（Top 10）
+- 抓取 Product Hunt 热门产品（前50名，按投票数排序）
+- 在客户端过滤 SaaS 相关产品（根据 topics 和 description 判断）
 - 执行"五维打分矩阵"
+- **API 参数规范**：
+  - 排序：`order: VOTES` (不使用 `orderBy` 或其他名称)
+  - 分页：`first: 20` 配合 `after: "MTA="` 等 base64 游标
+  - 评论：`comments(first: 5)` 提取用户痛点
+  - 话题：`topics { nodes { name } }` 用于分类判断
 - **异常处理**：若 API 失败，重试 3 次；若仍失败，推送错误报告并终止，**不要瞎编产品**。
-- **空结果处理**：若 Top 10 均低于 18 分，推送消息："今日无高潜力产品，任务结束"，**不要强行生成文章**。
+- **空结果处理**：若 Top 50 均低于 18 分，推送消息："今日无高潜力产品，任务结束"，**不要强行生成文章**。
 
 ### Step 3: 内容生成
 - 为通过筛选的产品各写 3 篇英文博客文章
