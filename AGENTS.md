@@ -9,15 +9,16 @@
 - **数据源**：Product Hunt GraphQL API
   - 端点：`https://api.producthunt.com/v2/api/graphql`
   - 认证：`Authorization: Bearer [TOKEN]`
-  - 排序参数：`order: VOTES` (投票数) / `order: NEWEST` (最新)
+  - 排序参数：`order: VOTES` (投票数) / `order: NEWEST` (最新) / `order: FEATURED_AT` (featured) / `order: RANKING` (排名)
+  - 筛选参数：`topic: "saas"` (主题 slug), `postedAfter: "2026-08-06T00:00:00Z"`, `postedBefore: "2026-08-06T23:59:59Z"`, `featured: true`
   - 分页：`first: 20`, `after: "MTA="` (base64 游标)
-  - 限制：无日期筛选、无搜索、无主题筛选，需在客户端过滤
+  - 可用字段：`id, name, tagline, description, votesCount, createdAt, website, dailyRank, weeklyRank, monthlyRank, yearlyRank, topics { nodes { name } }`, `comments { edges { node { id, body, createdAt } } }`
 - **输出格式**：Markdown (Hugo/GitHub Pages 规范)
 - **目标仓库**：https://github.com/sunnyswx/saas-ai-blog
 - **部署平台**：Netlify
 - **通知渠道**：微信 (通过 Gateway)
 - **佣金数据获取**：手动查询产品官网或联盟平台
-- **API 测试报告**：见 `API_TEST_REPORT.md`
+- **API 测试报告**：见 `API_TEST_REPORT_V2.md`
 
 ## 3. 核心评估逻辑：五维打分矩阵
 在筛选产品时，**必须**输出以下表格，总分 < 18 分直接淘汰：
@@ -101,15 +102,26 @@ draft: false
 
 ### Step 2: 抓取与评估
 - 抓取 Product Hunt 热门产品（前50名，按投票数排序）
-- 在客户端过滤 SaaS 相关产品（根据 topics 和 description 判断）
+- **日期筛选**：使用 `postedAfter` 和 `postedBefore` 筛选特定日期产品
+- **主题筛选**：使用 `topic: "saas"` 等筛选 SaaS 相关产品（slug 小写连字符）
+- **排名筛选**：优先选择 `dailyRank <= 10` 或 `weeklyRank <= 20` 的产品
 - 执行"五维打分矩阵"
 - **API 参数规范**：
-  - 排序：`order: VOTES` (不使用 `orderBy` 或其他名称)
+  - 排序：`order: VOTES` (投票数) / `order: NEWEST` (最新) / `order: RANKING` (排名)
+  - 日期：`postedAfter: "2026-08-06T00:00:00Z"`, `postedBefore: "2026-08-06T23:59:59Z"`
+  - 主题：`topic: "saas"` / `"developer-tools"` / `"artificial-intelligence"`
   - 分页：`first: 20` 配合 `after: "MTA="` 等 base64 游标
-  - 评论：`comments(first: 5)` 提取用户痛点
+  - 评论：`comments(first: 10)` 提取用户痛点
   - 话题：`topics { nodes { name } }` 用于分类判断
+- **主题过滤列表**：
+  - SaaS: `topic: "saas"`
+  - Developer Tools: `topic: "developer-tools"`
+  - AI: `topic: "artificial-intelligence"`
+  - Marketing: `topic: "marketing"`
+  - Sales: `topic: "sales"`
+  - Productivity: `topic: "productivity"`
 - **异常处理**：若 API 失败，重试 3 次；若仍失败，推送错误报告并终止，**不要瞎编产品**。
-- **空结果处理**：若 Top 50 均低于 18 分，推送消息："今日无高潜力产品，任务结束"，**不要强行生成文章**。
+- **空结果处理**：若所有产品均低于 18 分，推送消息："今日无高潜力产品，任务结束"，**不要强行生成文章**。
 
 ### Step 3: 内容生成
 - 为通过筛选的产品各写 3 篇英文博客文章
